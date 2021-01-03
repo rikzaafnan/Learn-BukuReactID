@@ -5,8 +5,15 @@ import Article from './Article'
 import Rendering from './Rendering'
 import Conditional from './Conditional'
 import List from './List'
+import EventButton from './EventButton'
+import AllEvent from './AllEvent';
+import BlueButton from './BlueButton';
 
 function App() {
+  function info () {
+    alert("Lorem ipsum sit dolor emet")
+  }
+
   return (
     <div className="App">
       {/* <header className="App-header"> */}
@@ -30,6 +37,12 @@ function App() {
       <Conditional userNameProps="rikza" />
 
       <List/>
+
+      <EventButton/>
+
+      <AllEvent/>
+
+      <BlueButton onCustomClick={info} caption="Tampilkan Info"/>
     </div>
   );
 }
