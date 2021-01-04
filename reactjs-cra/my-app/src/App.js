@@ -8,6 +8,8 @@ import List from './List'
 import EventButton from './EventButton'
 import AllEvent from './AllEvent';
 import BlueButton from './BlueButton';
+import Counter from './Counter';
+import UncontrolledForm from './UncontrolledForm'
 
 function App() {
   function info () {
@@ -43,6 +45,9 @@ function App() {
       <AllEvent/>
 
       <BlueButton onCustomClick={info} caption="Tampilkan Info"/>
+
+      <Counter/>
+      <UncontrolledForm/>
     </div>
   );
 }
