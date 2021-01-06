@@ -10,6 +10,8 @@ import AllEvent from './AllEvent';
 import BlueButton from './BlueButton';
 import Counter from './Counter';
 import UncontrolledForm from './UncontrolledForm'
+import ControlledForm from './ControlledForm'
+import TestControlledForm from './TestControlledForm'
 
 function App() {
   function info () {
@@ -36,7 +38,7 @@ function App() {
       {/* </header> */}
       {/* <Article userLogin = "sudah login" /> */}
       {/* <Rendering/> */}
-      <Conditional userNameProps="rikza" />
+      {/* <Conditional userNameProps="rikza" />
 
       <List/>
 
@@ -47,7 +49,11 @@ function App() {
       <BlueButton onCustomClick={info} caption="Tampilkan Info"/>
 
       <Counter/>
-      <UncontrolledForm/>
+      <UncontrolledForm/> */}
+      {/* <ControlledForm/> */}
+
+      <TestControlledForm/>
+
     </div>
   );
 }
