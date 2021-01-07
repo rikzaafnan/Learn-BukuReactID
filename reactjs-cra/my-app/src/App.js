@@ -12,6 +12,8 @@ import Counter from './Counter';
 import UncontrolledForm from './UncontrolledForm'
 import ControlledForm from './ControlledForm'
 import TestControlledForm from './TestControlledForm'
+import FormInput from './FormInput';
+import FormMultiple from './FormMultiple';
 
 function App() {
   function info () {
@@ -52,7 +54,11 @@ function App() {
       <UncontrolledForm/> */}
       {/* <ControlledForm/> */}
 
-      <TestControlledForm/>
+      {/* <TestControlledForm/> */}
+
+      {/* <FormInput/> */}
+
+      <FormMultiple/>
 
     </div>
   );
