@@ -14,6 +14,7 @@ import ControlledForm from './ControlledForm'
 import TestControlledForm from './TestControlledForm'
 import FormInput from './FormInput';
 import FormMultiple from './FormMultiple';
+import HelloPropTypes from './HelloPropTypes'
 
 function App() {
   function info () {
@@ -58,7 +59,9 @@ function App() {
 
       {/* <FormInput/> */}
 
-      <FormMultiple/>
+      {/* <FormMultiple/> */}
+
+      <HelloPropTypes name={[1,2,3]} />
 
     </div>
   );
