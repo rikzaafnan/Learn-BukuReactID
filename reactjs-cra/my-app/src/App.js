@@ -15,6 +15,13 @@ import TestControlledForm from './TestControlledForm'
 import FormInput from './FormInput';
 import FormMultiple from './FormMultiple';
 import HelloPropTypes from './HelloPropTypes'
+import PropTypesButton from './PropTypesButton'
+import { Switch, Route, NavLink, Redirect } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+
+// const Home = () => <h2>Halaman Home</h2>
+// const About = () => <h2>Halaman About</h2>
 
 function App() {
   function info () {
@@ -23,6 +30,24 @@ function App() {
 
   return (
     <div className="App">
+      <ul className="menu">
+        <li><NavLink to="/" activeClassName="active" exact >Home</NavLink></li>
+        <li><NavLink to="/about" activeClassName="active" >About</NavLink></li>
+        <li><NavLink to="/member" activeClassName="active" >Member</NavLink></li>
+      </ul>
+      <Switch>
+        <Route path='/about'>
+          <About/>
+        </Route>
+        <Route path='/member'>
+          <Redirect to="/" />
+        </Route>
+        <Route path='/'>
+          <Home/>
+        </Route>
+      </Switch>
+
+
       {/* <header className="App-header"> */}
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* <p>
@@ -61,8 +86,8 @@ function App() {
 
       {/* <FormMultiple/> */}
 
-      <HelloPropTypes name={[1,2,3]} />
-
+      {/* <HelloPropTypes name={[1,2,3]} />
+      <PropTypesButton/> */}
     </div>
   );
 }
