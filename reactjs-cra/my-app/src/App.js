@@ -21,6 +21,10 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Category from './pages/Category'
 import Post from './pages/Post'
+import Member from './pages/Member'
+import Login from './pages/Login'
+import GuardRoute from './components/GuardRoute'
+import React from 'react'
 
 // const Home = () => <h2>Halaman Home</h2>
 // const About = () => <h2>Halaman About</h2>
@@ -30,8 +34,10 @@ function App() {
     alert("Lorem ipsum sit dolor emet")
   }
 
-  let isLogin = true
-  let Member = "rikza"
+  const [isLogin, setLogin] = React.useState(false)
+
+  // let isLogin = true
+  // let Member = "rikza"
 
   return (
     <div className="App">
@@ -40,8 +46,12 @@ function App() {
         <li><NavLink to="/about" activeClassName="active" >About</NavLink></li>
         <li><NavLink to="/member" activeClassName="active" >Member</NavLink></li>
         <li><NavLink to="/category" activeClassName="active" >Category</NavLink></li>
+        <li><NavLink to="/login" activeClassName="active" >Login</NavLink></li>
       </ul>
       <Switch>
+        <Route path="/login" >
+          <Login setLogin={setLogin} />
+        </Route>
         <Route path="/post/:id" >
           <Post/>
         </Route>
@@ -53,11 +63,13 @@ function App() {
           
           <Prompt message="Are you sure you want to leave?" />
         </Route>
-        <Route path='/member'>
+        <GuardRoute path="/member" isLogin={isLogin} >
+          <Member/>
+        </GuardRoute>
+        {/* <Route path='/member'>
           { isLogin ? <h4>Selamat datang member {Member} </h4> : <Redirect to="/" /> }
           
-          
-        </Route>
+        </Route> */}
         <Route path='/'>
           <Home/>
         </Route>
